@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<title>要素の追加と削除</title>
+</head>
+
+<body>
+<h3>写真の一覧</h3>
+<p id = "photo">以下のボタンをクリックすると、写真一覧が表示されます</p>
+<button onclick="showPhoto()" id = "button">写真を表示</button>
+
+<script>
+function showPhoto() {
+    photoBox = document.getElementById('photo');
+    for(let i=8;i>=1;i--){
+        photoBox.insertAdjacentHTML("afterend",'<img src="photo_' + i + '.jpg">');
+        if(i==4||i==7){
+            photoBox.insertAdjacentHTML("afterend",'<br>');
+        }
+    }
+    document.getElementById('button').remove();
+}
+</script>
+
+</body>
+
+</html>
